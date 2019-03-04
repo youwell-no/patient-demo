@@ -23,7 +23,7 @@ Some configuration for the application is found in ./appsettings.json, but the o
 Production: https://portal.youwell.no/api
  - Allows incoming requests only from whitelisted domains
 
-Test: https://portal-integration-test.youwell.no/api
+Test: https://portal-customer-test.youwell.no/api
  - Allows incoming requests from https://localhost + whitelisted test-domains
 
 
