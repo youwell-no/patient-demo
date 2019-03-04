@@ -1,0 +1,40 @@
+@using Youwell.Platform.Patient.Configuration;
+@using Microsoft.AspNetCore.Mvc.Infrastructure;
+
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Microsoft.AspNetCore.SpaServices
+
+@inject ApplicationConfigurations applicationConfigurations
+
+@{
+    var cookieName = "youwell.platform.patient";
+    var token = Context.Request.Cookies[cookieName];
+    var baseUrl = "/";
+
+    var appConfig = applicationConfigurations;
+    var apiUrl = appConfig.ApiUrl;
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Youwell Platform Patient</title>
+    <base href="~/" />
+    <meta content="build" />
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/dist/main-client.css" asp-append-version="true" />
+</head>
+
+<body>
+    <div id="react-app"
+            asp-prerender-module="wwwroot/dist/main-server"
+            asp-prerender-data="new { token, baseUrl, apiUrl, appConfig, cookieName }">Laster...</div>
+
+    <script src="~/dist/vendors~main-client.js" asp-append-version="true"></script>
+    <script src="~/dist/main-client.js" asp-append-version="true"></script>
+</body>
+</html>
