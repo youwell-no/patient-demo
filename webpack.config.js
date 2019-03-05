@@ -38,6 +38,7 @@ module.exports = (env) => {
             ],
         },
         plugins: [
+            new webpack.NormalModuleReplacementPlugin(/\/iconv-loader$/, require.resolve('node-noop')), // Workaround for https://github.com/andris9/encoding/issues/16
             new MiniCssExtractPlugin({
                 filename: '[name].css',
             }),
