@@ -24,7 +24,7 @@ Production: https://portal.youwell.no/api
  - Allows incoming requests only from whitelisted domains
 
 Test: https://portal-customer-test.youwell.no/api
- - Allows incoming requests from https://localhost + whitelisted test-domains
+ - Allows incoming requests from https://localhost (ports 5000-5010) + whitelisted test-domains
 
 
 ### Build and run
@@ -32,6 +32,11 @@ Test: https://portal-customer-test.youwell.no/api
   - Run `npm install` - This installs all required npm packages
   - Run `npm run build` - This checks and builds all the needed assets for this solution (as configured in webpack.config.js)
   - Run `dotnet run` - Builds and starts the web application in a .net core hosting
+  
+  Dotnet core starts the application on both http://localhost:500 and  https://localhost:5001), but you need to use the HTTPS url to communicate with the server. If you need to install a certificate for localhost you can use the dotnet command `dotnet dev-certs https --trust`.
+  
+You also need an account in the Customer-Test version of our platform (log in at https://portal-customer-test.youwell.no) in order to test your application during development. If you dont have this please contact us at contact@youwell.no.
+
 
 ## Tools and Frameworks
 This application is build by React and Redux. Other tools used are:
