@@ -33,8 +33,12 @@ Test: https://portal-customer-test.youwell.no/api
   - Run `npm run build` - This checks and builds all the needed assets for this solution (as configured in webpack.config.js)
   - Run `dotnet run` - Builds and starts the web application in a .net core hosting
   
-  Dotnet core starts the application on both http://localhost:500 and  https://localhost:5001), but you need to use the HTTPS url to communicate with the server. If you need to install a certificate for localhost you can use the dotnet command `dotnet dev-certs https --trust`.
+Dotnet core starts the application on both http://localhost:500 and  https://localhost:5001), but you need to use the HTTPS url to communicate with the server. If you need to install a certificate for localhost you can use the dotnet command `dotnet dev-certs https --trust`.
   
+#### Development environment
+.Net Core gets its running environment from the ASPNETCORE_ENVIRONMENT variable. This is defaulted as Production, so in order to use development settings you need to set this to "Development" using f.ex this PowerShell `$Env:ASPNETCORE_ENVIRONMENT = "Development"`
+  
+#### Development account
 You also need an account in the Customer-Test version of our platform (log in at https://portal-customer-test.youwell.no) in order to test your application during development. If you dont have this please contact us at contact@youwell.no.
 
 
