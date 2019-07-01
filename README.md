@@ -1,6 +1,6 @@
 # Youwell.Platform.Patient-Demo
 
-This application is a basic demonstation of the patient side of the Youwell Platform. 
+This application is a basic demonstration of the patient side of the Youwell Platform. 
 
 It has the following features:
 - Login with Youwell.Platform authorization
@@ -18,28 +18,19 @@ It has the following features:
 ### Structure
 The application is build as a Single Page Application (SPA) in javascript (using React/Redux). .Net Core is only used to host the application. It could be hostet by any web application framework. All the relevant client-side code resides in the ./ClientApp folder.
 
-Some configuration for the application is found in ./appsettings.json, but the only neccessary configuration is the url to the Youwell.Platform API:
-
-Production: https://portal.youwell.no/api
- - Allows incoming requests only from whitelisted domains
-
-Test: https://portal-customer-test.youwell.no/api
- - Allows incoming requests from https://localhost (ports 5000-5010) + whitelisted test-domains
-
-
 ### Build and run
 
   - Run `npm install` - This installs all required npm packages
   - Run `npm run build` - This checks and builds all the needed assets for this solution (as configured in webpack.config.js)
   - Run `dotnet run` - Builds and starts the web application in a .net core hosting
   
-Dotnet core starts the application on both http://localhost:500 and  https://localhost:5001), but you need to use the HTTPS url to communicate with the server. If you need to install a certificate for localhost you can use the dotnet command `dotnet dev-certs https --trust`.
+Dotnet core starts the application on both http://localhost:5000 and  https://localhost:5001), but you need to use the HTTPS url to communicate with the server. If you need to install a certificate for localhost you can use the dotnet command `dotnet dev-certs https --trust`.
   
 #### Development environment
 .Net Core gets its running environment from the ASPNETCORE_ENVIRONMENT variable. This is defaulted as Production, so in order to use development settings you need to set this to "Development" using f.ex this PowerShell `$Env:ASPNETCORE_ENVIRONMENT = "Development"`
   
-#### Development account
-You also need an account in the Customer-Test version of our platform (log in at https://portal-customer-test.youwell.no) in order to test your application during development. If you dont have this please contact us at contact@youwell.no.
+#### Development/Test account
+For testing you could also use an account in our test-environment of the platform. Then set `https://portal-test.youwell.no/api` as ApiUrl in the appsettings-file. If you need an account here please contact us at contact@youwell.no.
 
 
 ## Tools and Frameworks

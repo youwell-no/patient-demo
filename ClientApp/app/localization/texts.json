@@ -88,7 +88,7 @@
     "tooltipCommingQuestionnaire":["Oppgaven inneholder en øvelse","The task has an exercise"]
   },
   "program":{
-    "scheduledTasksHeading":["Oppfølging", "Follow up"],
+    "scheduledTasksHeading":["Spørreskjema", "Questionnaires"],
     "weekplan":["Ukesplan", "Week plan"],
     "ended":["Avsluttet ${date}", "Ended ${date}"],
     "period":["Periode: ${start} til ${end}", "Period: ${start} to ${end}"],
@@ -113,7 +113,7 @@
     "goToMyPlan":["Gå til min plan", "Go to my plan"]
   },
   "menu":{
-    "scheduledTasks": ["Oppfølging", "Follow up"],
+    "scheduledTasks": ["Spørreskjema", "Questionnaires"],
     "startPage":["Startsiden", "Start page"]
   },
   "profile":{
